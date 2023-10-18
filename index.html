@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+        <!--------- QUẢN LÍ TUYỂN SINH --------->
+      <div class="mb-4 mt-4">
+        <h2>1/. BÀI TẬP QUẢN LÍ TUYỂN SINH</h2>
+        <p>
+          Điểm chuẩn của hội đồng các bạn tự nhập thêm. Điểm chuẩn của 3 môn thường tối đa 30đ. Nên có thể lấy các điểm chuẩn như sau: 30,25,29.
+          <br>
+          Nếu không thuộc khu vực hoặc đối tượng trong danh sách thì điểm khu vực và điểm đối tượng sẽ là 0. Nếu có 1 trong 3 môn bị điểm 0 thì cho rớt không cần kiểm tra tổng điểm có lớn hơn hoặc bằng điểm chuẩn hay không.
+          <br>
+          Cho biết thí sinh đậu hay rớt và tổng số điểm đạt được.
+        </p>
+        <div class="mb-3">
+          <div class="row mb-3">
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="diemChuan" placeholder="Điểm chuẩn"/>
+            </div>
+            <div class="col-4 form-group">
+              <select name="" id="khuVuc" class="form-control">
+                <option value="">Chọn khu vực</option>
+                <option value="2">A</option>
+                <option value="1">B</option>
+                <option value="0.5">C</option>
+              </select>
+            </div>
+            <div class="col-4 form-group">
+              <select name="" id="doiTuong" class="form-control">
+                <option value="">Chọn đối tượng</option>
+                <option value="2.5">1</option>
+                <option value="1.5">2</option>
+                <option value="1">3</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="diemMonThu1" placeholder="Điểm môn thứ 1"/>
+            </div>
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="diemMonThu2" placeholder="Điểm môn thứ 2"/>
+            </div>
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="diemMonThu3" placeholder="Điểm môn thứ 3"/>
+            </div>
+          </div> 
+        </div>
+        <div>
+          <button class="btn btn-primary" id="btnKetQuaDiem">
+            Kết Quả
+          </button>
+          <div class="mt-3 mb-5 bg-primary bg-opacity-25 p-2" id="ketQuaDiem">
+            Kết quả: <span id="inDiem"></span>
+          </div>
+        </div>
+      </div>
+
+
+        <!--------- TÍNH TIỀN ĐIỆN --------->
+      <div class="mb- mt-4">
+        <h2>2/. BÀI TẬP TÍNH TIỀN ĐIỆN</h2>
+        <p>
+          Tính tiền điện và trả theo quy tắc:
+          <br>
+          - 50kw đầu: 500đ/kw
+          <br>
+          - 50kw kế: 650đ/kw
+          <br>
+          - 100kw kế: 850đ/kw
+          <br>
+          - 150kw kế: 1100đ/kw
+          <br>
+          - Còn lại: 1300đ/kw
+        </p>
+        <div class="mb-3">
+          <div class="row w-75">
+            <div class="col-6 form-group">
+              <input type="text" class="form-control" id="hoTen" placeholder="Nhập Họ Tên"/>
+            </div>
+            <div class="col-6 form-group">
+              <input type="number" class="form-control w-50" id="soDien" value="" placeholder="Nhập số kw">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-warning" id="btnTienDien">
+            Tính tiền điện
+          </button>
+          <div class="mt-3 mb-5 bg-warning bg-opacity-25 p-2" id="ketQuaTienDien">
+            Kết quả: <span id="inTienDien"></span>
+          </div>
+        </div>
+      </div>
+
+        <!--------- TÍNH THUẾ THU NHẬP CÁ NHÂN --------->
+      <div class="mb- mt-4">
+        <h2>3/. BÀI TẬP TÍNH THUẾ THU NHẬP CÁ NHÂN</h2>
+        <p>
+          Viết chương trình nhập vào thông tin của 1 cá nhân (Họ tên, tổng thu nhập năm, số
+          người phụ thuộc). Tính và xuất thuế thu nhập cá nhân phải trả theo quy định sau:
+          <br>
+          Thu nhập chịu thuế = Tổng thu nhập năm - 4tr - Số người phụ thuộc * 1.6tr
+          <br>
+          Thuế suất theo biểu mẫu đề bài.
+        </p>
+        <div class="mb-3">
+          <div class="row w-75">
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="hoVaTen" placeholder="Nhập Họ Tên"/>
+            </div>
+            <div class="col-4 form-group">
+              <input type="number" class="form-control" id="tongThuNhap" value="" placeholder="Tổng thu nhập năm">
+            </div>
+            <div class="col-4 form-group">
+              <input type="number" class="form-control" id="soNguoiPhuThuoc" value="" placeholder="Số người phụ thuộc">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-success" id="btnTienThue">
+            Tính tiền thuế
+          </button>
+          <div class="mt-3 mb-5 bg-success bg-opacity-25 p-2" id="ketQuaTienThue">
+            Kết quả: <span id="inTienThue"></span>
+          </div>
+        </div>
+      </div>
+
+        <!--------- TÍNH TIỀN CÁP --------->
+      <div class="mb- mt-4">
+        <h2>4/. BÀI TẬP TÍNH TIỀN CÁP</h2>
+        <p>
+          Viết chương trình tính hóa đơn khách hàng cho một công ty cáp. Có 2 loại khách hàng:
+          <br>
+          Nhà dân và doanh nghiệp. Có 2 mức giá tính tiền cáp:
+          <br>
+          1. Nhà dân: <br>
+          • Phí xử lý hóa đơn: 4.5$ <br>
+          • Phí dịch vụ cơ bản: 20.5$ <br>
+          • Thuê kênh cao cấp: 7.5$ / kênh <br>
+          2. Doanh nghiệp <br>
+          • Phí xử lý hóa đơn: 15$ <br>
+          • Phí dịch vụ cơ bản: 75$ cho tổng 10 kết nối đầu, mỗi kết nối thêm 5$ / kết nối <br>
+          • Thuê kênh cao cấp: 50$ / kênh <br>
+          ❖ Chương trình cho phép nhập vào Mã khách hàng, loại khách hàng, số kết nối, số kênh
+          cao cấp. Nếu chọn loại khách hàng là Doanh nghiệp ô nhập số kết nối sẽ hiện lên, nếu
+          chọn loại khách hàng là nhà dân thì ô nhập kết nối sẽ ẩn đi hoặc disabled <br>
+        </p>
+        <div class="mb-3">
+          <div class="row w-75">
+            <div class="col-4 form-group">
+              <select id="mySelect" class="form-control" onchange="myFunction()">
+                <option>Chọn loại khách hàng</option>
+                <option>Nhà dân</option>
+                <option value="Doanh nghiệp">Doanh nghiệp</option>
+              </select>
+            </div>
+            <div class="col-4 form-group">
+              <input type="text" class="form-control" id="MaKH" value="" placeholder="Nhập mã khách hàng">
+            </div>
+            <div class="col-4 form-group">
+              <input type="number" class="form-control" id="soKenh" value="" placeholder="Số kênh cao cấp">
+            </div>
+            <div id="demo" class="col-4 form-group mt-3">
+              <input type="number" class="form-control" id="soKetNoi" value="" placeholder="Số kết nối">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-success" id="btnTinhTienCap">
+            Tính tiền cáp
+          </button>
+          <div class="mt-3 mb-5 bg-success bg-opacity-25 p-2" id="ketQuaTienCap">
+            Kết quả: <span id="inTienCap"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+
+      <!-- Onchange event -->
+      <script>
+        function myFunction() {
+          var x = document.getElementById("mySelect").value;
+          document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+      </script>
+
+      <!-- MAIN JS -->
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
