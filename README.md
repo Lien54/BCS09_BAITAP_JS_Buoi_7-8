@@ -1,2 +1,2 @@
-# BCS09_BAITAP_JS_Buoi_5-6
+# BCS09_BAITAP_JS_Buoi_5
 (ĐẶT TÊN NHẦM BUỔI 7-8)
