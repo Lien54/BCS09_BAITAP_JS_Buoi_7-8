@@ -93,3 +93,25 @@ document.getElementById('btnTienThue').onclick = function () {
 
 
             /*========= TÍNH TIỀN CÁP =========*/
+document.getElementById('btnTinhTienCap').onclick = function () {
+    // input họ tên, số điện người dùng nhập
+    var mySelect = document.getElementById('mySelect').value;
+    var maKH = document.getElementById('maKH').value;
+    var soKenh = document.getElementById('soKenh').value;
+    var soKetNoi = document.getElementById('soKetNoi').value;
+    var ketQuaTienCap = '';
+
+    // progress
+    var tienCap = 0;
+    if (mySelect == 'user') {
+        tienCap = (4.5 + 20.5) + (7.5 * soKenh);
+    } else if (mySelect == 'company' && soKetNoi <= 10) {
+        tienCap = (15 + 75) + (50 * soKenh);
+    } else if (mySelect == 'company' && soKetNoi > 10) {
+        tienCap = (15 + 75 + (soKetNoi - 10) * 5) + (50 * soKenh);
+    }
+
+    // In kết quả ra màn hình
+    ketQuaTienCap = 'Mã khách hàng: ' + maKH + ' - Tiền cáp phải nộp là: ' + tienCap + '$';
+    document.getElementById('inTienCap').innerHTML = ketQuaTienCap;
+}
